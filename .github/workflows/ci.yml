@@ -19,3 +19,15 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Deploy to LaunchPad Cloud (simulated)
+        run: node scripts/deploy.mjs
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
