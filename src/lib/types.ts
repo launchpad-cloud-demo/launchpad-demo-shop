@@ -4,3 +4,7 @@ export interface CartItem {
   unitPrice: number;
   quantity: number;
 }
+
+export interface PricingOptions {
+  taxRate: number;
+}
