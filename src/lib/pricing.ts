@@ -6,5 +6,5 @@ export function calculateTotal(items: CartItem[], taxRate: number): number {
 }
 
 export function bulkDiscountRate(quantity: number): number {
-  return quantity >= 100 ? 0.1 : 0;
+  return quantity > 100 ? 0.1 : 0;
 }
