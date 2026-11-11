@@ -1,0 +1,8 @@
+node_modules/
+.next/
+*.tsbuildinfo
+.env
+.env.*
+.DS_Store
+# The CI installs with `npm install` on every branch, so no lockfile is committed.
+package-lock.json
