@@ -10,7 +10,7 @@ const items: CartItem[] = [
 const orderDate = new Date('2026-11-11T12:00:00Z');
 
 export default function CheckoutPage() {
-  const total = calculateTotal(items, 0.0875);
+  const total = calculateTotal(items, { taxRate: 0.0875 });
 
   return (
     <main>
