@@ -1,4 +1,5 @@
-import { formatCurrency } from '@/lib/format';
+import { estimatedDelivery } from '@/lib/delivery';
+import { formatCurrency, formatDate } from '@/lib/format';
 import { invoiceLines } from '@/lib/invoice';
 import { describeOrder, orderTotal, type Order } from '@/lib/orders';
 import { shippingWeightKg } from '@/lib/shipping';
@@ -25,6 +26,7 @@ export default function OrdersPage() {
         ))}
       </ul>
       <p>Total: {formatCurrency(orderTotal(order))}</p>
+      <p>Estimated delivery: {formatDate(estimatedDelivery(order, new Date('2026-11-11T12:00:00Z')))}</p>
       <p>Shipping weight: {shippingWeightKg(order)} kg</p>
     </main>
   );
