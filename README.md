@@ -1,6 +1,6 @@
 # LaunchPad Demo Shop
 
-A small fictional Next.js storefront used to demonstrate **LaunchCare**, the AI support engineer for
+A small fictional Next.js storefront (prices are in US dollars) used to demonstrate **LaunchCare**, the AI support engineer for
 the fictional hosting platform LaunchPad Cloud. All data here is fictional demo data.
 
 `main` is healthy: it type-checks, passes its tests, and builds. Each `scenario/*` branch is `main`
