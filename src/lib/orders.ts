@@ -1,15 +1,20 @@
 import { roundCurrency } from './money';
 import type { CartItem } from './types';
 
+export interface OrderLine {
+  item: CartItem;
+  giftNote?: string;
+}
+
 export interface Order {
   id: string;
   customer: string;
-  items: CartItem[];
+  lines: OrderLine[];
   taxRate: number;
 }
 
 export function orderSubtotal(order: Order): number {
-  return order.items.reduce((sum, i) => sum + i.unitPrice * i.quantity, 0);
+  return order.lines.reduce((sum, l) => sum + l.item.unitPrice * l.item.quantity, 0);
 }
 
 export function orderTotal(order: Order): number {
@@ -17,5 +22,5 @@ export function orderTotal(order: Order): number {
 }
 
 export function describeOrder(order: Order): string {
-  return `${order.customer}: ${order.items.length} item(s)`;
+  return `${order.customer}: ${order.lines.length} item(s)`;
 }
