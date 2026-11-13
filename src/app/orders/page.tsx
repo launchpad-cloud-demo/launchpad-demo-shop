@@ -8,9 +8,9 @@ const order: Order = {
   id: 'ORD-1001',
   customer: 'Ada Example',
   taxRate: 0.0875,
-  items: [
-    { sku: 'MUG-001', name: 'LaunchPad mug', unitPrice: 12.5, quantity: 2 },
-    { sku: 'TEE-002', name: 'Rocket T-shirt', unitPrice: 24, quantity: 1 },
+  lines: [
+    { item: { sku: 'MUG-001', name: 'LaunchPad mug', unitPrice: 12.5, quantity: 2 } },
+    { item: { sku: 'TEE-002', name: 'Rocket T-shirt', unitPrice: 24, quantity: 1 } },
   ],
 };
 
